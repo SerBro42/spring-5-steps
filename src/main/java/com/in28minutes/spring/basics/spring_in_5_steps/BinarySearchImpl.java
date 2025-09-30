@@ -11,14 +11,7 @@ public class BinarySearchImpl {
 	@Autowired
 	private SortAlgorithm sortAlgorithm;
 	
-	//sortAlgorithm is a separate dependency that is being injected. sortAlgorithm is an interface, therefore it is being implemented by other classes. 
-	//Any of the classes that implement sortAlgorithm can be called upon in the main method
-	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-		super();
-		this.sortAlgorithm = sortAlgorithm;
-	}
-
-
+	//If you have mandatory dependencies, the recommendation is to use constructor injections. For all others, use setter injection
 
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
 

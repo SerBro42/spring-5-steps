@@ -9,14 +9,14 @@ public class BinarySearchImpl {
 
 	//With the annotation "autowired" we're indicationg that it is a dependency
 	@Autowired
-	private SortAlgorithm sortAlgorithm;
+	private SortAlgorithm quickSortAlgorithm;
 	
 	//If you have mandatory dependencies, the recommendation is to use constructor injections. For all others, use setter injection
 
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
 
-		int[] sortedNumbers = sortAlgorithm.sort(numbers);
-		System.out.println(sortAlgorithm);
+		int[] sortedNumbers = quickSortAlgorithm.sort(numbers);
+		System.out.println(quickSortAlgorithm);
 		
 		//Search the array
 		

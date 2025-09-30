@@ -1,8 +1,14 @@
 package com.in28minutes.spring.basics.spring_in_5_steps;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+//With the annotation "Component", we're indicating that it is a Bean
+@Component
 public class BinarySearchImpl {
 
+	//With the annotation "autowired" we're indicationg that it is a dependency
+	@Autowired
 	private SortAlgorithm sortAlgorithm;
 	
 	//sortAlgorithm is a separate dependency that is being injected. sortAlgorithm is an interface, therefore it is being implemented by other classes. 

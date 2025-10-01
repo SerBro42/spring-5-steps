@@ -20,7 +20,7 @@ public class SpringIn5StepsApplication {
 		
 		var binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
 
-		//Both beans are the same, they share the same hashcode. They are SINGLETON
+		//Both beans are different, they have different hashcodes. They are PROTOTYPE
 		System.out.println(binarySearch);
 		System.out.println(binarySearch1);
 		

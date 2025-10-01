@@ -2,13 +2,14 @@ package com.in28minutes.spring.basics.spring_in_5_steps;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //With the annotation "Component", we're indicating that it is a Bean
 //We added a @Scope annotation with prototype. Now, every new instance of this bean will be unique
 @Component
-@Scope("prototype")
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BinarySearchImpl {
 
 	//With the annotation "autowired" we're indicationg that it is a dependency

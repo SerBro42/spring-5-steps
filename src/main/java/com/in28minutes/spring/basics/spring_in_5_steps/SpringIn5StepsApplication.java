@@ -18,6 +18,12 @@ public class SpringIn5StepsApplication {
 		// By means of ApplicationContext, we instantiate the bean we need, in this case, BinarySearch
 		var binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 		
+		var binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+
+		//Both beans are the same, they share the same hashcode. They are SINGLETON
+		System.out.println(binarySearch);
+		System.out.println(binarySearch1);
+		
 		int result = binarySearch.binarySearch(new int[] {124, 4, 6}, 3);
 		
 		System.out.println(result);

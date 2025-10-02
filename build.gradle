@@ -19,8 +19,11 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework:spring-core'
+	implementation 'org.springframework:spring-context'
     implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+    implementation 'org.slf4j:slf4j-api'
+    implementation 'jakarta.annotation:jakarta.annotation-api'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

@@ -1,5 +1,6 @@
 package com.in28minutes.spring.basics.spring_in_5_steps;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,21 +19,25 @@ public class SpringIn5StepsBasicApplication {
 	public static void main(String[] args) {
 		
 		// Application context
-		var applicationContext = 
-				new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class);
-	
-		// By means of ApplicationContext, we instantiate the bean we need, in this case, BinarySearch
-		var binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 		
-		var binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+		try (var applicationContext = 
+				new AnnotationConfigApplicationContext(
+						SpringIn5StepsBasicApplication.class)) {
+			// By means of ApplicationContext, we instantiate the bean we need, in this case, BinarySearch
+			var binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+			
+			var binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
 
-		//Both beans are different, they have different hashcodes. They are PROTOTYPE
-		System.out.println(binarySearch);
-		System.out.println(binarySearch1);
-		
-		int result = binarySearch.binarySearch(new int[] {124, 4, 6}, 3);
-		
-		System.out.println(result);
+			//Both beans are different, they have different hashcodes. They are PROTOTYPE
+			System.out.println(binarySearch);
+			System.out.println(binarySearch1);
+			
+			int result = binarySearch.binarySearch(new int[] {124, 4, 6}, 3);
+			
+			System.out.println(result);
+		} catch (BeansException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

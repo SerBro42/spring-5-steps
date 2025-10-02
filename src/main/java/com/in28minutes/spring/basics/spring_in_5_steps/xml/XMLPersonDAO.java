@@ -1,10 +1,7 @@
 package com.in28minutes.spring.basics.spring_in_5_steps.xml;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
+//Since this is XML, no need for the annotations used in Spring Boot or Spring core
 public class XMLPersonDAO {
 	
 	XMLJdbcConnetion xmlJdbcConnection;
@@ -13,7 +10,8 @@ public class XMLPersonDAO {
 		return xmlJdbcConnection;
 	}
 
-	public void setXMLJdbcConnection(XMLJdbcConnetion jdbcConnection) {
+	//It is important to keep the correct capitalisation when writing this method's name. Otherwise, it returns an error.
+	public void setXmlJdbcConnection(XMLJdbcConnetion jdbcConnection) {
 		this.xmlJdbcConnection = jdbcConnection;
 	}
 	

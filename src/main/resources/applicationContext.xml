@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="xmlJdbcConnection" 
+    class="com.in28minutes.spring.basics.spring_in_5_steps.xml.XMLJdbcConnetion">
+    </bean>
+    
+    <bean id="xmlPersonDAO" class="com.in28minutes.spring.basics.spring_in_5_steps.xml.XMLPersonDAO">
+        <property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
+    </bean>
+
+</beans>

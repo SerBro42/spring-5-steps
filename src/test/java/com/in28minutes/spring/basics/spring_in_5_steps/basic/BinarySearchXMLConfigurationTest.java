@@ -10,7 +10,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.in28minutes.spring.basics.spring_in_5_steps.SpringIn5StepsBasicApplication;
 
-//Load the context. The tutorial uses SpringRunner, but it doesn't work. Perhaps it's deprecated? I used SpringExtension instead
+//Load the context. The tutorial uses SpringRunner, but it doesn't work. Perhaps it's deprecated? (Yes, it belongs to JUnit4 instead of 5) 
+//I used SpringExtension instead
 @ExtendWith(SpringExtension.class)
 //Configuration for the context. For XML, we use "locations" instread of "classes"
 @ContextConfiguration(locations="/testContext.xml")

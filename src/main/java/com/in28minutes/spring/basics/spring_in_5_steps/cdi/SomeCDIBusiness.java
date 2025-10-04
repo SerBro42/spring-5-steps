@@ -22,6 +22,19 @@ public class SomeCDIBusiness {
 		this.someCDIDAO = someCDIDAO;
 	}
 	
-	
+	public int findGreatest() {
+		//We declare the variable 'greatest' and set it to the lowest possible value an integer can adopt
+		int greatest = Integer.MIN_VALUE;
+		//retrieve the integer array from our injected dependency
+		int[] data = someCDIDAO.getData();
+		//iterate through all values of the array. If the currently iterated value is greater than 'greatest' 
+		//(which starts off as the lowest possible value an integer can have), we change 'greatest' to be equal to 'value'
+		for(int value:data) {
+			if(value > greatest) {
+				greatest = value;
+			}
+		}
+		return greatest;
+	}
 
 }
